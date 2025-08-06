@@ -34,4 +34,12 @@ export class ConnectivityCheckDto {
   @Min(1000)
   @Max(30000)
   timeout?: number = 5000;
+
+  @IsOptional()
+  @IsString()
+  expectedIp?: string; // Added expectedIp for test
+
+  @IsOptional()
+  @IsString()
+  desc?: string; // Added desc for test description
 }
