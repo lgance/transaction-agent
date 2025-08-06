@@ -38,10 +38,13 @@ async function bootstrap() {
   await app.listen(port);
   
   // 서버 시작 로그
-  logger.log('\r\n\r\n')
   logger.log(`🚀 Transaction Agent Server is running on http://localhost:${port}`);
   logger.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.log(`⏰ Started at: ${new Date().toLocaleString('ko-KR')}`);
+  logger.log(`🔧 API Endpoints:`);
+  logger.log(`   GET  /api/probe - Connectivity check`);
+  logger.log(`   GET  /api/health - Health check`);
+  logger.log(`   GET  /api/capabilities - Agent capabilities`);
 }
 
 bootstrap().catch(err => {

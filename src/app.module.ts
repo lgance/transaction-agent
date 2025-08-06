@@ -5,6 +5,9 @@ import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
+/** Modules */
+import { ConnectivityModule } from './connectivity/connectivity.module';
+
 // import { ValidationModule } from './validation/validation.module';
 
 
@@ -15,6 +18,7 @@ import { join } from 'path';
       rootPath: join(__dirname, '..', 'server_static'),
       serveRoot: '/',
     }),
+    ConnectivityModule,
     // ValidationModule, // Added ValidationModule
   ],
   controllers: [],
